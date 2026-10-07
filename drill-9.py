@@ -115,3 +115,12 @@ def main():
                 boy.draw()
                 update_canvas()
                 delay(0.01)
+
+        finally:
+            close_canvas()
+    finally:
+        os.chdir(previous_directory)
+
+
+if __name__ == "__main__":
+    main()
