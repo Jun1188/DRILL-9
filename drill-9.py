@@ -44,3 +44,7 @@ class Boy:
         if self.action != action:
             self.action = action
             self.frame = 0.0
+
+    def update(self, pressed_keys, dt):
+        dx = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
+        dy = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
