@@ -51,3 +51,9 @@ class Boy:
 
         if dx != 0:
             self.facing = dx
+
+        if dx != 0 or dy != 0:
+            action = RUN_RIGHT if self.facing == 1 else RUN_LEFT
+        else:
+            action = IDLE_RIGHT if self.facing == 1 else IDLE_LEFT
+        self.change_action(action)
