@@ -17,3 +17,8 @@ FRAME_COUNT = 8
 MOVE_SPEED = 250.0
 IDLE_FPS = 8.0
 RUN_FPS = 12.0
+
+IDLE_RIGHT = "idle_right"
+IDLE_LEFT = "idle_left"
+RUN_RIGHT = "run_right"
+RUN_LEFT = "run_left"
