@@ -57,3 +57,8 @@ class Boy:
         else:
             action = IDLE_RIGHT if self.facing == 1 else IDLE_LEFT
         self.change_action(action)
+
+        distance = math.hypot(dx, dy)
+        if distance != 0:
+            self.x += dx / distance * MOVE_SPEED * dt
+            self.y += dy / distance * MOVE_SPEED * dt
