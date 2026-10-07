@@ -67,3 +67,6 @@ class Boy:
         half_height = FRAME_HEIGHT / 2
         self.x = max(half_width, min(CANVAS_WIDTH - half_width, self.x))
         self.y = max(half_height, min(CANVAS_HEIGHT - half_height, self.y))
+
+        row, fps = ACTIONS[self.action]
+        self.frame = (self.frame + fps * dt) % FRAME_COUNT
