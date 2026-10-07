@@ -30,3 +30,12 @@ ACTIONS = {
     RUN_RIGHT: (100, RUN_FPS),
     RUN_LEFT: (0, RUN_FPS),
 }
+
+class Boy:
+    def __init__(self, image):
+        self.image = image
+        self.x = CANVAS_WIDTH / 2
+        self.y = CANVAS_HEIGHT / 2
+        self.facing = 1
+        self.action = IDLE_RIGHT
+        self.frame = 0.0
