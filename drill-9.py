@@ -62,3 +62,8 @@ class Boy:
         if distance != 0:
             self.x += dx / distance * MOVE_SPEED * dt
             self.y += dy / distance * MOVE_SPEED * dt
+
+        half_width = FRAME_WIDTH / 2
+        half_height = FRAME_HEIGHT / 2
+        self.x = max(half_width, min(CANVAS_WIDTH - half_width, self.x))
+        self.y = max(half_height, min(CANVAS_HEIGHT - half_height, self.y))
