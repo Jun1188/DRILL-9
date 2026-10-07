@@ -92,3 +92,12 @@ def handle_events(pressed_keys):
         elif event.type == SDL_KEYUP and event.key in arrow_keys:
             pressed_keys.discard(event.key)
     return running
+
+def main():
+    previous_directory = Path.cwd()
+    os.chdir(Path(__file__).resolve().parent)
+    try:
+        open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+        try:
+            background = load_image("TUK_GROUND.png")
+            boy = Boy(load_image("animation_sheet.png"))
