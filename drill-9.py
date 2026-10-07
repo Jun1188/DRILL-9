@@ -22,3 +22,11 @@ IDLE_RIGHT = "idle_right"
 IDLE_LEFT = "idle_left"
 RUN_RIGHT = "run_right"
 RUN_LEFT = "run_left"
+
+# clip_draw는 이미지의 아래쪽을 y 좌표 원점으로 사용한다.
+ACTIONS = {
+    IDLE_RIGHT: (300, IDLE_FPS),
+    IDLE_LEFT: (200, IDLE_FPS),
+    RUN_RIGHT: (100, RUN_FPS),
+    RUN_LEFT: (0, RUN_FPS),
+}
