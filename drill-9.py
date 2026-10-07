@@ -77,3 +77,18 @@ class Boy:
             int(self.frame) * FRAME_WIDTH, row,
             FRAME_WIDTH, FRAME_HEIGHT, self.x, self.y
         )
+
+def handle_events(pressed_keys):
+    running = True
+    arrow_keys = (SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN)
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            running = False
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_ESCAPE:
+                running = False
+            elif event.key in arrow_keys:
+                pressed_keys.add(event.key)
+        elif event.type == SDL_KEYUP and event.key in arrow_keys:
+            pressed_keys.discard(event.key)
+    return running
