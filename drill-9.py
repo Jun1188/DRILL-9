@@ -70,3 +70,10 @@ class Boy:
 
         row, fps = ACTIONS[self.action]
         self.frame = (self.frame + fps * dt) % FRAME_COUNT
+
+    def draw(self):
+        row, fps = ACTIONS[self.action]
+        self.image.clip_draw(
+            int(self.frame) * FRAME_WIDTH, row,
+            FRAME_WIDTH, FRAME_HEIGHT, self.x, self.y
+        )
