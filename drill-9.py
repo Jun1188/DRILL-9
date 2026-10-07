@@ -101,3 +101,17 @@ def main():
         try:
             background = load_image("TUK_GROUND.png")
             boy = Boy(load_image("animation_sheet.png"))
+
+            pressed_keys = set()
+            previous_time = perf_counter()
+            while handle_events(pressed_keys):
+                current_time = perf_counter()
+                dt = min(current_time - previous_time, 0.1)
+                previous_time = current_time
+                boy.update(pressed_keys, dt)
+
+                clear_canvas()
+                background.draw(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2)
+                boy.draw()
+                update_canvas()
+                delay(0.01)
