@@ -6,3 +6,6 @@ from pathlib import Path
 from time import perf_counter
 
 from pico2d import *
+
+CANVAS_WIDTH = 1280
+CANVAS_HEIGHT = 1024
