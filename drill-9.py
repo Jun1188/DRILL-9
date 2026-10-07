@@ -39,3 +39,8 @@ class Boy:
         self.facing = 1
         self.action = IDLE_RIGHT
         self.frame = 0.0
+
+    def change_action(self, action):
+        if self.action != action:
+            self.action = action
+            self.frame = 0.0
